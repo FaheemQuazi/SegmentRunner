@@ -1,0 +1,118 @@
+
+                   Multiplexor
+ScoreDisplay[5] -> |\
+                   | | -> To 7Seg Decoder -> To the display
+GameDisplay[5]  -> |/
+                    |
+                    InGameOrNotInGame
+
+
+// 7-Seg Display States (IN GAME)
+~~~ For non-player displays ~~~
+- Just Floor
+- Just Ceiling
+- Both Ceiling and Floor
+
+~~~ For the player displays
+- Player on Floor - Just Floor ### The player should do nothing here
+- Player on Floor - Just Ceiling ***Game Loss should occur
+- Player on Floor - Both Ceiling and Floor *~* Jumping here = 1 point
+- Player on Ceiling - Just Floor ***Game Loss should occur
+- Player on Ceiling - Just Ceiling ### The player should do nothing here
+- Player on Ceiling - Both Ceiling and Floor *~* Jumping here = 1 point
+
+// Scoring
+- 1 successful jump = 1 point *~*
+- successful jump = player moves from a valid ceiling tile to a valid floor tile
+
+// Showing Game States
+LEDs will count down so you know when the game starts
+When you die, the LEDs will light up again
+
+// Game State Machine
+- Logged Out: Nothing happens (Waiting on Logged In Bit HIGH: GO TO Waiting State)
+- WaitForStart: Game Waiting to start; equivalent to logged in (Waiting on the button push: GO TO LEDCountdown3)
+- LEDCountdown3: Show 3 LEDS lit; Clear displays (Waiting on 1sec timer: GO TO LEDCountdown2)
+- LEDCountdown2: Show 2 LEDS lit; (Waiting on 1sec timer: GO TO LEDCountdown1)
+- LEDCountdown1: Show 1 LED  lit;  (Waiting on 1sec timer: GO TO GameStart)
+- GameStart: show first game image; Set All Game Variables; (GO TO GamePlaying)
+- GamePlaying: Default Gameplay State; show either all floor, or all ceiling 
+                    (Waiting on RNG, if RNG > threshold, GO TO Either TransitionCeiling or TransitionFloor, respectively)
+- GameTransitionFloor: Going from all floor to all ceiling
+- GameTransitionCeiling: Going from all ceiling to all floor
+- GameButtonPress: Move the character up or down, score
+- GameDie: Character moves and there is no floor or ceiling
+- GameScore: Show the score on the screen; (Waiting on button push: GO TO WaitForStart)
+
+
+// State: ALL FLOOR
+Ceilingbits[6] = [ 0 0 0 0 0 0 ] < 0
+  PlayerPos[1] = 0 down 1 up
+  Floorbits[6] = [ 1 1 1 1 1 1 ] < 1
+
+// STATE: ALL CEILING
+Ceilingbits[6] = [ 1 1 1 1 1 1 ] < 1
+  PlayerPos[1] = 0 down 1 up
+  Floorbits[6] = [ 0 0 0 0 0 0 ] < 0
+
+// STATE: ALL EVERYTHING (DURING COUNTDOWN)
+Ceilingbits[6] = [ 1 1 1 1 1 1 ]
+  PlayerPos[1] = 0 down 1 up
+  Floorbits[6] = [ 1 1 1 1 1 1 ]
+
+// STATE: TRANSITION TO FLOOR
+Ceilingbits[6] = [ 1 1 1 1 0 0 ] < 0
+  PlayerPos[1] =       0
+  Floorbits[6] = [ 0 0 1 1 1 1 ] < 1
+
+
+*** 7-Segment representation ***
+
+// Running on the floor
+-------------------------------------
+|  1  |  2  |  3  |  4  |  5  |  6  |
+-------------------------------------
+          
+
+           |
+  ___   ___   ___   ___   ___   ___
+
+
+// Ceiling Comes in
+-------------------------------------
+|  1  |  2  |  3  |  4  |  5  |  6  |
+-------------------------------------
+                    ___   ___   ___
+
+           |
+  ___   ___   ___   ___   ___   ___
+
+
+// Ceiling Over Player Floor Running Out
+-------------------------------------
+|  1  |  2  |  3  |  4  |  5  |  6  |
+-------------------------------------
+        ___   ___   ___   ___   ___
+
+           |
+  ___   ___   ___   ___  
+
+
+// Player moved to ceiling
+-------------------------------------
+|  1  |  2  |  3  |  4  |  5  |  6  |
+-------------------------------------
+  ___   ___   ___   ___   ___   ___
+           |
+           
+  ___   ___   ___  
+
+
+// Running on the ceiling
+-------------------------------------
+|  1  |  2  |  3  |  4  |  5  |  6  |
+-------------------------------------
+  ___   ___   ___   ___   ___   ___
+           |
+           
+ 
