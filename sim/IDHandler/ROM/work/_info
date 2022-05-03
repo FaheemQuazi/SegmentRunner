@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/FPGA/Lab4_SHARIATZADEH_Arash/sim_rom
+vIDHandler
+Z0 !s110 1651524284
+!i10b 1
+!s100 7UOnPb;BJFmPDYc1b^_R50
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>1U_AU12zTn;3]@OfZAN23
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM
+w1651523365
+8C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v
+FC:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v
+!i122 23
+L0 8 102
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1651524284.000000
+!s107 C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@i@d@handler
+vPlayerIDROM_16
+R0
+!i10b 1
+!s100 4^TbIAWj@id9f^BDW6g;;2
+R1
+IW0lP`?fLP0jAj9eoKnWRV2
+R2
+R3
+w1651516331
+8C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/PlayerIDROM_16.v
+FC:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/PlayerIDROM_16.v
+!i122 21
+L0 40 66
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/PlayerIDROM_16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/PlayerIDROM_16.v|
+!i113 1
+R6
+R7
+n@player@i@d@r@o@m_16
+vtb_IDHandler
+R0
+!i10b 1
+!s100 Fee=Nca1n2YUT2VQX55cC1
+R1
+Ibo5J]QnT>hSX0R]d]m3]l3
+R2
+R3
+w1651523037
+8C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v
+FC:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v
+!i122 22
+L0 2 107
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v|
+!i113 1
+R6
+R7
+ntb_@i@d@handler
+vtestbench_ROM
+!s110 1651520823
+!i10b 1
+!s100 cHd5k8Sd:UfWAL0EKBl2@2
+R1
+IJeJzMJSDRJ>2oj2iK37@N1
+R2
+R3
+w1651520720
+8C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/testbench_ROM.v
+FC:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/testbench_ROM.v
+!i122 0
+L0 2 44
+R4
+r1
+!s85 0
+31
+!s108 1651520823.000000
+!s107 C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/testbench_ROM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/ROM/testbench_ROM.v|
+!i113 1
+R6
+R7
+ntestbench_@r@o@m

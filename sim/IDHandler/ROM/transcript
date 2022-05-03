@@ -1,0 +1,120 @@
+# Compile of IDHandler.v failed with 11 errors.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# 3 compiles, 1 failed with 11 errors.
+# Compile of IDHandler.v failed with 11 errors.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# 3 compiles, 1 failed with 11 errors.
+# Compile of IDHandler.v failed with 11 errors.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# 3 compiles, 1 failed with 11 errors.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v failed with 6 errors.
+# 3 compiles, 1 failed with 6 errors.
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_IDHandler -L altera_mf_ver -L altera_ver
+# vsim -gui work.tb_IDHandler -L altera_mf_ver -L altera_ver 
+# Start time: 15:20:28 on May 02,2022
+# Loading work.tb_IDHandler
+# Loading work.IDHandler
+# Loading work.PlayerIDROM_16
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'PasswordSwitch'. The port definition is at: C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v(8).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_IDHandler/DUT_IDHandler File: C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v Line: 12
+quit -sim
+# End time: 15:22:01 on May 02,2022, Elapsed time: 0:01:33
+# Errors: 0, Warnings: 17
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler
+# vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler 
+# Start time: 15:22:12 on May 02,2022
+# Loading work.tb_IDHandler
+# Loading work.IDHandler
+# Loading work.PlayerIDROM_16
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave -r sim:/tb_IDHandler/*
+run 3000 ns
+
+run 3000 ns
+# Break key hit
+quit -sim
+# End time: 15:24:07 on May 02,2022, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 2
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler
+# vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler 
+# Start time: 15:24:26 on May 02,2022
+# Loading work.tb_IDHandler
+# Loading work.IDHandler
+# Loading work.PlayerIDROM_16
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/tb_IDHandler/*
+
+run 3000 ns
+add wave -r sim:/tb_IDHandler/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+
+run 3000 ns
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart -f
+quit -sim
+# End time: 15:44:01 on May 02,2022, Elapsed time: 0:19:35
+# Errors: 0, Warnings: 1
+vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler
+# vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler 
+# Start time: 15:44:07 on May 02,2022
+# Loading work.tb_IDHandler
+# Loading work.IDHandler
+# Loading work.PlayerIDROM_16
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/tb_IDHandler/*
+# Compile of PlayerIDROM_16.v was successful.
+# Compile of tb_IDHandler.v was successful.
+# Compile of IDHandler.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler
+# End time: 15:44:54 on May 02,2022, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 2
+# vsim -gui -L altera_mf_ver -L altera_ver work.tb_IDHandler 
+# Start time: 15:44:54 on May 02,2022
+# Loading work.tb_IDHandler
+# Loading work.IDHandler
+# Loading work.PlayerIDROM_16
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/tb_IDHandler/*
+
+run 3000 ns
