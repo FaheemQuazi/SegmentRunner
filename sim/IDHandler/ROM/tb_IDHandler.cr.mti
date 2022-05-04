@@ -5,6 +5,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PlayerIDROM_16
 
+} {} {}} {C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v} {1 {vlog -work work -stats=none {C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/src/IDHandler.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IDHandler
+
+Top level modules:
+	IDHandler
+
 } {} {}} {C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v} {1 {vlog -work work -stats=none {C:/Users/User/Desktop/ECE UH/ECE Courses/ECE 5440 - Advanced Digital Design/Project/SegmentRunner/sim/IDHandler/tb_IDHandler.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module tb_IDHandler

@@ -6,26 +6,26 @@
     // LoggedOut, LoggedIn, IsGuest_to_GC, PlayerAddress_to_GC
 
 module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, PlayerAddress_from_ID,
-                       LogoutCommand_from_GC, IsGuest_from_ID, LoggedOut, LoggedIn, isGuest_to_GC, Logout_to_ID, PlayerAddress_to_GC);
+                       LogoutCommand_from_GC, isGuest_from_ID, LoggedOut, LoggedIn, isGuest_to_GC, Logout_to_ID, PlayerAddress_to_GC);
+    input clk, rst;
     input[3:0] PasswordSwitch;
     input PasswordButton, MatchedID;
-    input[2:0] PlayerAddress_from_ID;
+    input[4:0] PlayerAddress_from_ID;
     input LogoutCommand_from_GC;
     input isGuest_from_ID;
     output LoggedOut, LoggedIn, isGuest_to_GC, Logout_to_ID;
     reg LoggedOut, LoggedIn, isGuest_to_GC, Logout_to_ID;
-    output[2:0] PlayerAddress_to_GC;
-    reg[2:0] PlayerAddress_to_GC;
+    output[4:0] PlayerAddress_to_GC;
+    reg[4:0] PlayerAddress_to_GC;
 
     reg[23:0] UserEnteredPassword;
 
     parameter STANDBY = 0, DIGIT1 = 1, DIGIT2 = 2, DIGIT3 = 3,
               DIGIT4 = 4, DIGIT5 = 5, DIGIT6 = 6, FETCH_ROM = 7,
-              WAIT = 8, CATCH_ROM = 9, COMPARE = 10, PASSED = 11;
+              WAIT1 = 8, WAIT2 = 9, CATCH_ROM = 10, COMPARE = 11, PASSED = 12;
 
     reg [3:0] State;
-    reg[1:0] WaitCnt;
-    reg[2:0] ROM_Address;
+    reg[4:0] ROM_Address;
     reg [1:0] WrongPasswordCnt;
     reg[23:0] Password_Stored;
     wire[23:0] Password_from_ROM;
@@ -36,7 +36,7 @@ module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, Play
         if(rst == 1'b0) begin
             LoggedOut <= 1'b1;
             LoggedIn <= 1'b0;
-            IsGuest_to_GC <= 1'b0;
+            isGuest_to_GC <= 1'b0;
             PlayerAddress_to_GC <= 0;
             State <= STANDBY;
         end
@@ -46,6 +46,7 @@ module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, Play
                 LoggedOut <= 1'b1;
                 LoggedIn <= 1'b0;
                 Logout_to_ID = 1'b0; // reset logout pulse
+                WrongPasswordCnt <= 0;
                 if(MatchedID == 1'b1) begin
                     if(isGuest_from_ID == 1'b1) begin
                         State <= PASSED; // Guest skips password entry
@@ -70,13 +71,13 @@ module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, Play
             DIGIT3: begin
                 if(PasswordButton == 1'b1) begin
                     UserEnteredPassword[15:12] <= PasswordSwitch;
-                    State <= DIGIT3;
+                    State <= DIGIT4;
                 end
             end
             DIGIT4: begin
                 if(PasswordButton == 1'b1) begin
                     UserEnteredPassword[11:8] <= PasswordSwitch;
-                    State <= DIGIT4;
+                    State <= DIGIT5;
                 end
             end
             DIGIT5: begin
@@ -93,29 +94,31 @@ module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, Play
             end
             FETCH_ROM: begin
                 ROM_Address <= PlayerAddress_from_ID;
+                State <= WAIT1;
             end
-            WAIT: begin
-                if(WaitCnt == 2) begin
-                    State <= CATCH_ROM;
-                end
-                WaitCnt <= WaitCnt + 1;
+            WAIT1: begin
+                State <= WAIT2;
+            end
+            WAIT2: begin
+                State <= CATCH_ROM;
             end
             CATCH_ROM: begin
-                WaitCnt <= 0;
                 Password_Stored <= Password_from_ROM;
                 State <= COMPARE;
             end
             COMPARE: begin
                 if (WrongPasswordCnt == 3) begin // three wrong attempts trigger change in ID
-                    Logout_to_ID = 1'b1;
+                    Logout_to_ID <= 1'b1;
                     State <= STANDBY;
                 end
-                if (Password_Stored == UserEnteredPassword) begin
-                    State <= CHECK_GUEST;
-                end
                 else begin
-                    WrongPasswordCnt = WrongPasswordCnt + 1;
-                    State = DIGIT1;
+                    if (Password_Stored == UserEnteredPassword) begin
+                        State <= PASSED;
+                    end
+                    else begin
+                        WrongPasswordCnt <= WrongPasswordCnt + 1;
+                        State <= DIGIT1;
+                    end
                 end
             end
             PASSED: begin

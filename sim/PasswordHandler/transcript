@@ -1,0 +1,118 @@
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_PasswordHandler -L altera_mf_ver -L altera_mf
+# vsim -gui work.tb_PasswordHandler -L altera_mf_ver -L altera_mf 
+# Start time: 12:18:55 on May 04,2022
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave -r sim:/tb_PasswordHandler/*
+
+run 3000 ns
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+
+run 3000 ns
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 12:26:06 on May 04,2022, Elapsed time: 0:07:11
+# Errors: 0, Warnings: 1
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler
+# vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler 
+# Start time: 12:26:24 on May 04,2022
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave -r sim:/tb_PasswordHandler/*
+
+run 3000 ns
+quit -sim
+# End time: 12:31:52 on May 04,2022, Elapsed time: 0:05:28
+# Errors: 0, Warnings: 2
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler
+# vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler 
+# Start time: 12:32:12 on May 04,2022
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave -r sim:/tb_PasswordHandler/*
+
+run 3000 ns
+quit -sim
+# End time: 12:35:11 on May 04,2022, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 2
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler
+# vsim -gui -L altera_mf_ver -L altera_mf work.tb_PasswordHandler 
+# Start time: 12:35:21 on May 04,2022
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+add wave sim:/tb_PasswordHandler/DUT_PasswordHandler/*
+
+run 3000 ns
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+
+run 3000 ns
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of PasswordHandler.v was successful.
+# Compile of tb_PasswordHandler.v was successful.
+# Compile of PasswordROM_24.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_PasswordHandler
+# Loading work.PasswordHandler
+# Loading work.PasswordROM_24
+run 3000 ns
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
