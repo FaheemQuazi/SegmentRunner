@@ -1,0 +1,41 @@
+# Compile of ScoreTracker.v was successful.
+# Compile of ScoreTracking_testbench.v was successful.
+# Compile of RAM_SCORE.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.ScoreTracking_testbench -L altera_mf_ver -L altera_mf
+# vsim -gui work.ScoreTracking_testbench -L altera_mf_ver -L altera_mf 
+# Start time: 19:26:06 on May 04,2022
+# Loading work.ScoreTracking_testbench
+# Loading work.ScoreTracker
+# Loading work.RAM_SCORE
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (14) for port 'Score'. The port definition is at: D:/ADD/Final Project/src/ScoreTracker.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT File: D:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v Line: 17
+add wave sim:/ScoreTracking_testbench/*
+add wave -position insertpoint  \
+sim:/ScoreTracking_testbench/GameScoring_DUT/RAM_in
+run 800 ns
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "RAM_SCORE_CTRL.hex" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(871)
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT/GAME_SCORES/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read RAM_SCORE_CTRL.hex.
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_SCORE_CTRL.ver" in read mode.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(48977)
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT/GAME_SCORES/altsyncram_component/m_default/altsyncram_inst
+run 800 ns
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (15) does not match connection size (14) for port 'Score'. The port definition is at: D:/ADD/Final Project/src/ScoreTracker.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT File: D:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v Line: 17
+run 800 ns
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "RAM_SCORE_CTRL.hex" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(871)
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT/GAME_SCORES/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read RAM_SCORE_CTRL.hex.
+# ** Warning: (vsim-7) Failed to open readmem file "RAM_SCORE_CTRL.ver" in read mode.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(48977)
+#    Time: 0 ps  Iteration: 0  Instance: /ScoreTracking_testbench/GameScoring_DUT/GAME_SCORES/altsyncram_component/m_default/altsyncram_inst
+run 800 ns

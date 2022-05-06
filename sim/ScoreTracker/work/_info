@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+vRAM_SCORE
+Z0 !s110 1651710335
+!i10b 1
+!s100 E33@0kUUm9XRPX?LF_0=20
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ICeGLV5d5SDH`mU:L_U0mU3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/ADD/Final Project/sim/ScoreTracker
+w1651709053
+8D:/ADD/Final Project/src/RAM_SCORE.v
+FD:/ADD/Final Project/src/RAM_SCORE.v
+!i122 2
+L0 40 71
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1651710335.000000
+!s107 D:/ADD/Final Project/src/RAM_SCORE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ADD/Final Project/src/RAM_SCORE.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@r@a@m_@s@c@o@r@e
+vScoreTracker
+R0
+!i10b 1
+!s100 D8F?jM0HAmG@bF_jYo=UE2
+R1
+I]7ED][fo]KHlG=aj@;:<O2
+R2
+R3
+w1651709093
+8D:/ADD/Final Project/src/ScoreTracker.v
+FD:/ADD/Final Project/src/ScoreTracker.v
+!i122 0
+L0 4 124
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ADD/Final Project/src/ScoreTracker.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ADD/Final Project/src/ScoreTracker.v|
+!i113 1
+R6
+R7
+n@score@tracker
+vScoreTracking_testbench
+R0
+!i10b 1
+!s100 ofoOzNdHK]9jAlUzOa7hz3
+R1
+INTFLI3A_zFoMAmFocgA<I3
+R2
+R3
+w1651708909
+8D:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v
+FD:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v
+!i122 1
+L0 2 76
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ADD/Final Project/sim/ScoreTracker/ScoreTracking_testbench.v|
+!i113 1
+R6
+R7
+n@score@tracking_testbench
