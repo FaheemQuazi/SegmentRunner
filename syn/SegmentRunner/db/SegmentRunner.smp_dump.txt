@@ -1,0 +1,32 @@
+
+State Machine - |SegmentRunner|ScoreTracker:ScoreBoard|State
+Name State.WAITGAME State.GLOBALCHECK State.RAMWRITE State.COMPARE State.RAMCATCH State.RAMFETCH2 State.RAMFETCH1 State.RAMFETCH State.WAITSCORE State.RAMINIT 
+State.RAMINIT 0 0 0 0 0 0 0 0 0 0 
+State.WAITSCORE 0 0 0 0 0 0 0 0 1 1 
+State.RAMFETCH 0 0 0 0 0 0 0 1 0 1 
+State.RAMFETCH1 0 0 0 0 0 0 1 0 0 1 
+State.RAMFETCH2 0 0 0 0 0 1 0 0 0 1 
+State.RAMCATCH 0 0 0 0 1 0 0 0 0 1 
+State.COMPARE 0 0 0 1 0 0 0 0 0 1 
+State.RAMWRITE 0 0 1 0 0 0 0 0 0 1 
+State.GLOBALCHECK 0 1 0 0 0 0 0 0 0 1 
+State.WAITGAME 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |SegmentRunner|GameController:GCMain|SurfaceGen:SG_Game|State
+Name State.TRANSITIONFIN State.TRANSITION State.TRANSITIONSTART State.NONE 
+State.NONE 0 0 0 0 
+State.TRANSITIONSTART 0 0 1 1 
+State.TRANSITION 0 1 0 1 
+State.TRANSITIONFIN 1 0 0 1 
+
+State Machine - |SegmentRunner|ButtonShaper:BTSPGame|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 
+
+State Machine - |SegmentRunner|ButtonShaper:BTSPPass|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 

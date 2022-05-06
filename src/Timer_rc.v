@@ -8,28 +8,22 @@ module Timer_rc(Enable, Clear, CfgValue, Tick, Clk, Rst);
     wire IntTick;
     Timer_1ms Internal(Enable, IntTick, Clk, Rst);
 
-    always@(negedge Rst) begin
-        Tick <= 0;
-        Count <= 0;
-    end
-
-    always@(posedge IntTick) begin
-        if (Count < CfgValue) begin
-            Count <= Count + 1;
-            Tick <= 1'b0;
-        end else begin
-            Count <= 1'b0;
-            Tick <= 1'b1;
-        end
-    end
-
-    always@(posedge Clear) begin
-        Count <= 0;
-    end
-
     always@(posedge Clk) begin
-        if (Tick <= 1'b1) begin
+        if (Rst == 1'b0) begin
+            Tick <= 0;
+            Count <= 0;
+        end else if (Clear == 1'b1) begin
+            Count <= 0;
+        end else if (Tick <= 1'b1) begin
             Tick <= 1'b0;
-        end
+        end else if (IntTick == 1'b1) begin
+            if (Count < CfgValue) begin
+                Count <= Count + 1;
+                Tick <= 1'b0;
+            end else begin
+                Count <= 1'b0;
+                Tick <= 1'b1;
+            end
+        end 
     end
 endmodule

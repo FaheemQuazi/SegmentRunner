@@ -5,13 +5,10 @@ module LFSR_16b(Q, Enable, Clk, Rst);
   reg [15:0] LFSR;
   wire feedback = LFSR[15];
 
-  always@(negedge Rst) begin
-    LFSR <= 16'hFFFF;
-  end
-
-  always @(posedge Clk)
-  begin
-    if (Enable == 1'b1) begin
+  always @(posedge Clk) begin
+    if (Rst == 1'b0) begin
+      LFSR <= 16'hFFFF;
+    end else if (Enable == 1'b1) begin
       LFSR[0] <= feedback;
       LFSR[1] <= LFSR[0];
       LFSR[2] <= LFSR[1] ^ feedback;

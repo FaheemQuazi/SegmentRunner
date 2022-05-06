@@ -3,9 +3,9 @@
 // Module for keeping track of player scores and high score
 module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, global_winner);
     input clk, rst;
-    input [1:0] playerID;
+    input [4:0] playerID;
     input [3:0] score_req;
-    input [14:0] Score;
+    input [13:0] Score;
     output personal_winner, global_winner;
     reg personal_winner, global_winner;
 
@@ -13,7 +13,7 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
 
     reg [13:0] Player_score, Global_score, RAM_Data;
     reg [3:0] State;
-    reg [1:0] Player_ID;
+    reg [4:0] Player_ID;
     reg [1:0] WinningPlayer;
     reg [1:0] counter;
     reg resetflag;
@@ -61,7 +61,7 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
                     end
                 end
               RAMFETCH: begin
-                  RAM_addr <= {3'b000, Player_ID};
+                  RAM_addr <= Player_ID;
                   read_write <= 1'b0;
                   State <= RAMFETCH1;
                 end
