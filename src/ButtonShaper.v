@@ -1,45 +1,47 @@
-// ECE 5440
-// Author: Faheem Quazi (1586686)
-// Module: ButtonShaper
-// Description: Generate Single-Cycle Pulse from digital input (button)
+// ECE 5440 - 14387 Advanced Digital Design, Dr. Yuhua Chen 
+// Author: Arash Shariatzadeh, 0099
+// ButtonShaper.v
+// This module serves as the button shaper that converts the long low pulse when a button signal B_in is
+// pressed to a single cycle high pulse B_out to be used as an input for other modules that require
+// interface to the user in the form of push-buttons. Implemented via Two-Procedure FSM. 
+module ButtonShaper (B_in, B_out, clk, rst);
+    input B_in;
+    output B_out;
+    input clk, rst;
+    reg B_out;
 
-module ButtonShaper(Bin, Bout, Clk, Rst);
-    // physical IO
-    input Bin, Clk, Rst; // Bin = Active LOW / Rst = Active LOW
-    output Bout;
-    reg Bout;
-
-    // FSM setup
-    parameter INIT=0, PULSE=1, WAIT=2;
-    reg [1:0] State, StateNext;
-
-    // CombLogic
-    always @(State, Bin) begin
-        case (State)
+    parameter INIT = 0, PULSE = 1, WAIT = 2;
+    reg[1:0] State, StateNext;
+    // State Combinational Logic Procedure
+    always@(State, B_in) begin
+        case(State)
             INIT: begin
-                Bout = 1'b0;
-                if (Bin == 1'b0)
+                B_out = 1'b0;
+                if (B_in == 1'b0)
                     StateNext = PULSE;
                 else
-                    StateNext = INIT;
-            end
+                StateNext = INIT;
+                end
             PULSE: begin
-                Bout = 1'b1;
+                B_out = 1'b1;
                 StateNext = WAIT;
             end
             WAIT: begin
-                Bout = 1'b0;
-                if (Bin == 1'b1)
+                B_out = 1'b0;
+                if (B_in == 1'b1)
                     StateNext = INIT;
                 else
-                    StateNext = WAIT; 
+                    StateNext = WAIT;
+            end
+            default: begin
+                B_out = 1'b0;
+                StateNext = INIT;
             end
         endcase
     end
-
-    // StateReg
-    always @(posedge Clk) begin
-        if (Rst == 1'b0)
+    // State Register (Sequential)
+    always@(posedge clk) begin
+        if (rst == 0)
             State <= INIT;
         else
             State <= StateNext;
