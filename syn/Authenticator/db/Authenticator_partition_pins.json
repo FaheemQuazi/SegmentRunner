@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LoggedOut",
+					"strict" : false
+				},
+				{
+					"name" : "LoggedIn",
+					"strict" : false
+				},
+				{
+					"name" : "isGuest_to_GC",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "LogoutCommand_from_GC",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "PasswordButton",
+					"strict" : false
+				},
+				{
+					"name" : "PasswordSwitch[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PasswordSwitch[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PasswordSwitch[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PasswordSwitch[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

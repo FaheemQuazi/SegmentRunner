@@ -1,0 +1,35 @@
+
+State Machine - |Authenticator|PasswordHandler:Check_Password|State
+Name State.PASSED State.COMPARE State.CATCH_ROM State.WAIT2 State.WAIT1 State.FETCH_ROM State.DIGIT6 State.DIGIT5 State.DIGIT4 State.DIGIT3 State.DIGIT2 State.DIGIT1 State.STANDBY 
+State.STANDBY 0 0 0 0 0 0 0 0 0 0 0 0 0 
+State.DIGIT1 0 0 0 0 0 0 0 0 0 0 0 1 1 
+State.DIGIT2 0 0 0 0 0 0 0 0 0 0 1 0 1 
+State.DIGIT3 0 0 0 0 0 0 0 0 0 1 0 0 1 
+State.DIGIT4 0 0 0 0 0 0 0 0 1 0 0 0 1 
+State.DIGIT5 0 0 0 0 0 0 0 1 0 0 0 0 1 
+State.DIGIT6 0 0 0 0 0 0 1 0 0 0 0 0 1 
+State.FETCH_ROM 0 0 0 0 0 1 0 0 0 0 0 0 1 
+State.WAIT1 0 0 0 0 1 0 0 0 0 0 0 0 1 
+State.WAIT2 0 0 0 1 0 0 0 0 0 0 0 0 1 
+State.CATCH_ROM 0 0 1 0 0 0 0 0 0 0 0 0 1 
+State.COMPARE 0 1 0 0 0 0 0 0 0 0 0 0 1 
+State.PASSED 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Authenticator|IDHandler:Check_ID|State
+Name State.ID_MATCH State.CHECK_GUEST State.COMPARE State.CATCH_ROM State.WAIT State.FETCH_ROM State.DIGIT4 State.DIGIT3 State.DIGIT2 State.DIGIT1 
+State.DIGIT1 0 0 0 0 0 0 0 0 0 0 
+State.DIGIT2 0 0 0 0 0 0 0 0 1 1 
+State.DIGIT3 0 0 0 0 0 0 0 1 0 1 
+State.DIGIT4 0 0 0 0 0 0 1 0 0 1 
+State.FETCH_ROM 0 0 0 0 0 1 0 0 0 1 
+State.WAIT 0 0 0 0 1 0 0 0 0 1 
+State.CATCH_ROM 0 0 0 1 0 0 0 0 0 1 
+State.COMPARE 0 0 1 0 0 0 0 0 0 1 
+State.CHECK_GUEST 0 1 0 0 0 0 0 0 0 1 
+State.ID_MATCH 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Authenticator|ButtonShaper:ButtonPulse|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 
