@@ -43,19 +43,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY SegmentRunner
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:27:39  MAY 06, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
-set_global_assignment -name VERILOG_FILE ../../src/Timer_rc.v
-set_global_assignment -name VERILOG_FILE ../../src/Timer_1ms.v
-set_global_assignment -name VERILOG_FILE ../../src/SurfaceGen.v
-set_global_assignment -name VERILOG_FILE ../../src/ShiftReg_6b.v
-set_global_assignment -name VERILOG_FILE ../../src/SegmentRunner.v
-set_global_assignment -name VERILOG_FILE ../../src/ScoreTracker.v
-set_global_assignment -name VERILOG_FILE ../../src/RAM_SCORE.v
-set_global_assignment -name VERILOG_FILE ../../src/LFSR_16b.v
-set_global_assignment -name VERILOG_FILE ../../src/InputEnabler.v
-set_global_assignment -name VERILOG_FILE ../../src/GameController.v
-set_global_assignment -name VERILOG_FILE ../../src/Decoder_7seg.v
-set_global_assignment -name VERILOG_FILE ../../src/Decoder.v
-set_global_assignment -name VERILOG_FILE ../../src/ButtonShaper.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -77,8 +64,8 @@ set_location_assignment PIN_AB13 -to SwPass[2]
 set_location_assignment PIN_AA13 -to SwPass[1]
 set_location_assignment PIN_AA14 -to SwPass[0]
 set_location_assignment PIN_U7 -to Rst
-set_location_assignment PIN_U13 -to LEDHScore
-set_location_assignment PIN_V13 -to LEDPScore
+set_location_assignment PIN_AA2 -to LEDHScore
+set_location_assignment PIN_AA1 -to LEDPScore
 set_location_assignment PIN_M9 -to Clk
 set_location_assignment PIN_M6 -to BtPass
 set_location_assignment PIN_M7 -to BtGame
@@ -136,4 +123,27 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name ACTIVE_SERIAL_CLOCK FREQ_100MHZ
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE ../../src/PlayerIDROM_16.v
+set_global_assignment -name VERILOG_FILE ../../src/PasswordROM_24.v
+set_global_assignment -name VERILOG_FILE ../../src/PasswordHandler.v
+set_global_assignment -name VERILOG_FILE ../../src/IDHandler.v
+set_global_assignment -name VERILOG_FILE ../../src/Authenticator.v
+set_global_assignment -name VERILOG_FILE ../../src/Timer_rc.v
+set_global_assignment -name VERILOG_FILE ../../src/Timer_1ms.v
+set_global_assignment -name VERILOG_FILE ../../src/SurfaceGen.v
+set_global_assignment -name VERILOG_FILE ../../src/ShiftReg_6b.v
+set_global_assignment -name VERILOG_FILE ../../src/SegmentRunner.v
+set_global_assignment -name VERILOG_FILE ../../src/ScoreTracker.v
+set_global_assignment -name VERILOG_FILE ../../src/RAM_SCORE.v
+set_global_assignment -name VERILOG_FILE ../../src/LFSR_16b.v
+set_global_assignment -name VERILOG_FILE ../../src/InputEnabler.v
+set_global_assignment -name VERILOG_FILE ../../src/GameController.v
+set_global_assignment -name VERILOG_FILE ../../src/Decoder_7seg.v
+set_global_assignment -name VERILOG_FILE ../../src/Decoder.v
+set_global_assignment -name VERILOG_FILE ../../src/ButtonShaper.v
+set_location_assignment PIN_L1 -to LEDLoggedIn
+set_location_assignment PIN_L2 -to LEDLoggedOut
+set_location_assignment PIN_U1 -to LEDMatchedID
+set_location_assignment PIN_W9 -to BtLogOut
+set_location_assignment PIN_N1 -to LEDGameTick
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

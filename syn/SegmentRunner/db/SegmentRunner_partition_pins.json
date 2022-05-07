@@ -2,7 +2,228 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "Disp5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Disp0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDPScore",
+					"strict" : false
+				},
+				{
+					"name" : "LEDHScore",
+					"strict" : false
+				},
+				{
+					"name" : "LEDLoggedIn",
+					"strict" : false
+				},
+				{
+					"name" : "LEDLoggedOut",
+					"strict" : false
+				},
+				{
+					"name" : "LEDMatchedID",
+					"strict" : false
+				},
+				{
+					"name" : "LEDGameTick",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Rst",
+					"strict" : false
+				},
+				{
+					"name" : "BtLogOut",
+					"strict" : false
+				},
+				{
+					"name" : "BtGame",
+					"strict" : false
+				},
+				{
+					"name" : "BtPass",
+					"strict" : false
+				},
+				{
+					"name" : "SwPass[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SwPass[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SwPass[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SwPass[2]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

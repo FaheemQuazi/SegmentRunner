@@ -18,7 +18,7 @@ module SurfaceGen(TransitionTick, TransitionDiff, Floor, Ceiling, MoveTick, Clk,
     always@(posedge Clk) begin
         if (Rst == 1'b0) begin
             FloorRstVal <= 6'b111111;
-            CeilRstVal <= 6'b000000;
+            CeilRstVal <= 6'b001100;
             FloorIn <= 1'b1;
             CeilIn <= 1'b0;
             LastPos <= 1'b0;

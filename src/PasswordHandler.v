@@ -125,6 +125,7 @@ module PasswordHandler(clk, rst, PasswordSwitch, PasswordButton, MatchedID, Play
                 LoggedOut <= 1'b0;
                 LoggedIn <= 1'b1;
                 isGuest_to_GC <= isGuest_from_ID;
+                PlayerAddress_to_GC <= PlayerAddress_from_ID;
                 if(LogoutCommand_from_GC == 1'b1) begin
                     LoggedIn <= 1'b0;
                     LoggedOut <= 1'b1;

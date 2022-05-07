@@ -30,32 +30,7 @@ module tb_gamecontroller();
         @(posedge Clk); GameButton = 1'b1;
         @(posedge Clk); GameButton = 1'b0;
         @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); GameButton = 1'b1;
-        @(posedge Clk); GameButton = 1'b0;
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
-        @(posedge Clk); 
+        @(posedge Clk);
     end
 
 endmodule

@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	D:/faheem/projects/SegmentRunner/syn/SegmentRunner/SegmentRunner.qarlog
+
+Archive:	D:/faheem/projects/SegmentRunner/syn/SegmentRunner/SegmentRunner.qar
+Date:		Sat May 07 12:50:06 2022
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+D:/faheem/projects/SegmentRunner/src/Authenticator.v
+D:/faheem/projects/SegmentRunner/src/ButtonShaper.v
+D:/faheem/projects/SegmentRunner/src/Decoder.v
+D:/faheem/projects/SegmentRunner/src/Decoder_7seg.v
+D:/faheem/projects/SegmentRunner/src/GameController.v
+D:/faheem/projects/SegmentRunner/src/IDHandler.v
+D:/faheem/projects/SegmentRunner/src/InputEnabler.v
+D:/faheem/projects/SegmentRunner/src/LFSR_16b.v
+D:/faheem/projects/SegmentRunner/src/PasswordHandler.v
+D:/faheem/projects/SegmentRunner/src/PasswordROM_24.v
+D:/faheem/projects/SegmentRunner/src/PlayerIDROM_16.v
+D:/faheem/projects/SegmentRunner/src/RAM_SCORE.v
+D:/faheem/projects/SegmentRunner/src/ScoreTracker.v
+D:/faheem/projects/SegmentRunner/src/SegmentRunner.v
+D:/faheem/projects/SegmentRunner/src/ShiftReg_6b.v
+D:/faheem/projects/SegmentRunner/src/SurfaceGen.v
+D:/faheem/projects/SegmentRunner/src/Timer_1ms.v
+D:/faheem/projects/SegmentRunner/src/Timer_rc.v
+D:/faheem/projects/SegmentRunner/syn/SegmentRunner/SegmentRunner.qpf
+D:/faheem/projects/SegmentRunner/syn/SegmentRunner/SegmentRunner.qsf
+c:/intelfpga/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 21 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

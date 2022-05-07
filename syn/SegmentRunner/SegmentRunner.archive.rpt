@@ -1,0 +1,115 @@
+Archive Project report for SegmentRunner
+Sat May 07 12:50:06 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sat May 07 12:50:06 2022 ;
+; Revision Name          ; SegmentRunner                         ;
+; Top-level Entity Name  ; SegmentRunner                         ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory D:/faheem/projects/SegmentRunner/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'D:/faheem/projects/SegmentRunner/syn/SegmentRunner/SegmentRunner.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'SegmentRunner.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Sat May 07 12:50:06 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++---------------------------------------------------------+
+; Files Archived                                          ;
++---------------------------------------------------------+
+; File Name                                               ;
++---------------------------------------------------------+
+; ../../src/Authenticator.v                               ;
+; ../../src/ButtonShaper.v                                ;
+; ../../src/Decoder.v                                     ;
+; ../../src/Decoder_7seg.v                                ;
+; ../../src/GameController.v                              ;
+; ../../src/IDHandler.v                                   ;
+; ../../src/InputEnabler.v                                ;
+; ../../src/LFSR_16b.v                                    ;
+; ../../src/PasswordHandler.v                             ;
+; ../../src/PasswordROM_24.v                              ;
+; ../../src/PlayerIDROM_16.v                              ;
+; ../../src/RAM_SCORE.v                                   ;
+; ../../src/ScoreTracker.v                                ;
+; ../../src/SegmentRunner.v                               ;
+; ../../src/ShiftReg_6b.v                                 ;
+; ../../src/SurfaceGen.v                                  ;
+; ../../src/Timer_1ms.v                                   ;
+; ../../src/Timer_rc.v                                    ;
+; c:/intelfpga/20.1/quartus/bin64/assignment_defaults.qdf ;
+; D:/faheem/projects/SegmentRunner/src/Authenticator.v    ;
+; D:/faheem/projects/SegmentRunner/src/ButtonShaper.v     ;
+; D:/faheem/projects/SegmentRunner/src/Decoder.v          ;
+; D:/faheem/projects/SegmentRunner/src/Decoder_7seg.v     ;
+; D:/faheem/projects/SegmentRunner/src/GameController.v   ;
+; D:/faheem/projects/SegmentRunner/src/IDHandler.v        ;
+; D:/faheem/projects/SegmentRunner/src/InputEnabler.v     ;
+; D:/faheem/projects/SegmentRunner/src/LFSR_16b.v         ;
+; D:/faheem/projects/SegmentRunner/src/PasswordHandler.v  ;
+; D:/faheem/projects/SegmentRunner/src/PasswordROM_24.v   ;
+; D:/faheem/projects/SegmentRunner/src/PlayerIDROM_16.v   ;
+; D:/faheem/projects/SegmentRunner/src/RAM_SCORE.v        ;
+; D:/faheem/projects/SegmentRunner/src/ScoreTracker.v     ;
+; D:/faheem/projects/SegmentRunner/src/SegmentRunner.v    ;
+; D:/faheem/projects/SegmentRunner/src/ShiftReg_6b.v      ;
+; D:/faheem/projects/SegmentRunner/src/SurfaceGen.v       ;
+; D:/faheem/projects/SegmentRunner/src/Timer_1ms.v        ;
+; D:/faheem/projects/SegmentRunner/src/Timer_rc.v         ;
+; SegmentRunner.qpf                                       ;
+; SegmentRunner.qsf                                       ;
++---------------------------------------------------------+
+
+

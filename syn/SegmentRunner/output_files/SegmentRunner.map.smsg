@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at PasswordHandler.v(35): always construct contains both blocking and non-blocking assignments File: D:/faheem/projects/SegmentRunner/src/PasswordHandler.v Line: 35

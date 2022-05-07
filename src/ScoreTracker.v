@@ -1,8 +1,9 @@
 // Author: Zain Bhatti, 0374
 // Score Tracking module
 // Module for keeping track of player scores and high score
-module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, global_winner);
+module ScoreTracker(clk, rst, score_req, playerID, isGuest, Score, personal_winner, global_winner);
     input clk, rst;
+    input isGuest;
     input [4:0] playerID;
     input [3:0] score_req;
     input [13:0] Score;
@@ -33,7 +34,7 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
             personal_winner <= 1'b0;
             global_winner <= 1'b0;
             counter <= 2'b00;
-            read_write <= 1'b1;
+            read_write <= 1'b0;
             RAM_addr <= 5'b00000;
             RAM_out <= 14'b00000000000000;
             State <= RAMINIT;
@@ -42,7 +43,9 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
           begin
             case (State)
               RAMINIT: begin
+                  read_write <= 1'b1;
                   RAM_addr <= {3'b000, counter};
+                  RAM_out <= 14'b00000000000000;
                   counter <= counter + 1;
                   if (counter == 2'b11) begin
                       read_write <= 1'b0;
@@ -51,9 +54,15 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
                 end
               WAITSCORE: begin
                   if (score_req == 5) begin
-                      Player_score <= Score;
-                      Player_ID <= playerID;
-                      State <= RAMFETCH;
+                      if (isGuest == 1'b1) begin
+                          State <= WAITGAME;
+                        end
+                      else
+                        begin
+                          Player_score <= Score;
+                          Player_ID <= playerID;
+                          State <= RAMFETCH;
+                        end
                     end
                   else
                     begin
@@ -106,6 +115,8 @@ module ScoreTracker(clk, rst, score_req, playerID, Score, personal_winner, globa
               WAITGAME: begin
                   read_write <= 1'b0;
                   if (score_req != 5) begin
+                      personal_winner <= 1'b0;
+                      global_winner <= 1'b0;
                       State <= WAITSCORE;
                     end
                   else

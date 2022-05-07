@@ -8,13 +8,14 @@ module GameController(LoggedIn, GameButton, FloorBits, CeilingBits, PlayerPos, G
 
     reg [3:0] SG_TransitionDiff;
     reg SG_TransitionTick;
+    reg SG_Reset;
 
     reg TR_Enable, TR_Clear;
     reg [9:0] TR_CfgValue;
 
     wire GTick;
     Timer_rc TR_Game(TR_Enable, TR_Clear, TR_CfgValue, GTick, Clk, Rst);
-    SurfaceGen SG_Game(SG_TransitionTick, SG_TransitionDiff, FloorBits, CeilingBits, GTick, Clk, Rst);
+    SurfaceGen SG_Game(SG_TransitionTick, SG_TransitionDiff, FloorBits, CeilingBits, GTick, Clk, SG_Reset);
 
     // RNG
     reg [15:0] RNG_Thresh;
@@ -35,9 +36,10 @@ module GameController(LoggedIn, GameButton, FloorBits, CeilingBits, PlayerPos, G
             SG_TransitionTick <= 1'b0;
             TR_Enable <= 1'b0;
             TR_Clear <= 1'b0;
-            TR_CfgValue <= 10'd300;
-            RNG_Thresh <= 16'b1000000010000000; // approx 25% 
+            TR_CfgValue <= 10'd150;
+            RNG_Thresh <= 16'b1000000011111111; // approx 25% 
             RNG_Enable <= 1'b1;
+            SG_Reset <= 1'b0;
             GameState <= LOGGEDOUT;
         end else begin
             if (LoggedIn == 1'b0) begin
@@ -48,15 +50,20 @@ module GameController(LoggedIn, GameButton, FloorBits, CeilingBits, PlayerPos, G
                     // sit idle
                     SG_TransitionDiff <= 4'd4;
                     SG_TransitionTick <= 1'b0;
+                    SG_Reset <= 1'b0;
                     TR_Enable <= 1'b0;
                     TR_Clear <= 1'b0;
-                    TR_CfgValue <= 10'd300;
+                    TR_CfgValue <= 10'd150;
                     if (LoggedIn == 1'b1) begin
                         GameState <= GAMEWAIT;
                     end
                 end
                 GAMEWAIT: begin
                     TR_Clear <= 1'b1;
+                    TR_Enable <= 1'b0;
+                    TR_CfgValue <= 10'd150;
+                    SG_Reset <= 1'b1;
+                    SG_TransitionTick <= 1'b0;
                     if (GameButton == 1'b1) begin
                         GameState <= GAMESTART;
                     end
@@ -66,28 +73,51 @@ module GameController(LoggedIn, GameButton, FloorBits, CeilingBits, PlayerPos, G
                     TR_Enable <= 1'b1;
                     TR_Clear <= 1'b0;
                     PlayerPos <= 1'b0;
-                    RNG_Thresh <= 16'b1000000010000000;
+                    SG_TransitionDiff <= 4'd4;
+                    SG_TransitionTick <= 1'b0;
+                    RNG_Thresh <= 16'b1000000011111111;
                     GameState <= GAMEPLAY;
                 end
                 GAMEPLAY: begin
+
                     if (GTick == 1'b1) begin
                         if (GameScore < 14'd9999) begin // cap score at 9999
                             GameScore <= GameScore + 14'd1;
+                            // if (GameScore > 250) begin
+
+                            // end
                         end
+
                         if (RNG_Q > RNG_Thresh) begin
                             SG_TransitionTick <= 1'b1;
-                            RNG_Thresh <= 16'b1000000010000000;
+                            RNG_Thresh <= 16'b1000000011111111;
 
-                            if (TR_CfgValue > 1) begin
-                                TR_CfgValue <= TR_CfgValue - 10'd1;
+                            if (TR_CfgValue > 10'd100) begin
+                                TR_CfgValue <= TR_CfgValue - 1;
+                            end else begin
+                                if (SG_TransitionDiff > 1) begin
+                                    SG_TransitionDiff <= SG_TransitionDiff - 1;
+                                    TR_CfgValue <= 10'd150;
+                                end else begin
+                                    TR_CfgValue <= 10'd90;
+                                end
                             end
                         end else begin
                             SG_TransitionTick <= 1'b0;
-                            RNG_Thresh <= RNG_Thresh - 16'd1;
+                            RNG_Thresh <= RNG_Thresh - 16'd50;
                         end
+
+                       
+
+                        if (PlayerPos == 1'b1 && CeilingBits[4] == 1'b0) begin
+                            GameState <= GAMEEND;
+                        end else if (PlayerPos == 1'b0 && FloorBits[4] == 1'b0) begin
+                            GameState <= GAMEEND;
+                        end                   
                     end else begin
                         SG_TransitionTick <= 1'b0;
                     end
+
                     if (GameButton == 1'b1) begin
                         GameState <= GAMEJUMP;
                     end
@@ -107,6 +137,7 @@ module GameController(LoggedIn, GameButton, FloorBits, CeilingBits, PlayerPos, G
                     if (GameButton == 1'b1) begin
                         GameState <= GAMEWAIT;
                     end
+                    SG_Reset <= 1'b0;
                 end
                 default: begin
                     GameState <= LOGGEDOUT;
