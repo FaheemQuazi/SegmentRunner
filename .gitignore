@@ -22,3 +22,6 @@ sim/**/transcript*
 sim/**/sc_dpiheader.h
 sim/**/vsim.dbg
 
+# ignore class-specific files and folders
+teamMembers.txt
+demo/
